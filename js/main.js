@@ -33,14 +33,14 @@ function setup() {
   //set the starting status of the dino and platform
   platform[0].x = 0;
   dino = new Doodle();
-  dino.x = platform[0].x + 50;
+  dino.x = platform[0].x + 10;
   dino.y = platform[0].y - 5;
 }
 
 function draw() {
   background(75, 0, 130);
   drawPlatform();
-  drawDoodle();
+  drawDino();
 
   //make the dino move with mouse and stay on the platform/ drop
   dino.x = mouseX;
@@ -51,7 +51,7 @@ function draw() {
       r++;
     }
   } else {
-    dino.y = platform[r].y - 5;
+    dino.y = platform[r].y - 40;
   }
 }
 
@@ -66,12 +66,12 @@ function drawPlatform() {
     fill(255, 136, 0);
     textFont("Verdana");
     text("SCORE:", 625, 30);
-    let score = parseInt(frameCount / 42) + 1;
+    let score = parseInt(frameCount / 40) + 1;
     text(score, 715, 30);
   }
 }
 
-function drawDoodle() {
+function drawDino() {
   push();
   translate(dino.x, dino.y);
   image(dinoGif, 0, 0, 50, 50);
