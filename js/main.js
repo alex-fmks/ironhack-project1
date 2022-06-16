@@ -11,6 +11,7 @@ function Doodle() {
 
 function Platform() {
   this.x = 10;
+
   this.y = 10;
   this.height = 10;
 }
